@@ -10,7 +10,7 @@
 
 export const siteConfig = {
   referenceWebsite: "https://touquirakhtar.com/",
-  websiteUrl: "https://vaatsalyamishra.dev/",
+  websiteUrl: "https://vaatsalyamishra8800-star.github.io/portfolio/",
 
   identity: {
     fullName: "Vaatsalya Mishra",
@@ -22,9 +22,9 @@ export const siteConfig = {
     headline: "CRAFTING AUTONOMOUS AI SWARMS & DATA ENGINES.",
     intro: "Third-year Computer Science & Engineering (Artificial Intelligence) student at PSIT Kanpur with expertise in multi-agent orchestration, Data Structures & Algorithms, and high-throughput fintech data pipelines.",
     about: "I engineer intelligent autonomous systems and algorithmic tools with a focus on high throughput, zero-compromise UX, and clean architecture. Experienced in building interactive BI dashboards, writing optimized SQL for live fintech datasets at Bluestock, and architecting local multi-agent LLM systems with deterministic function-calling loops.",
-    portrait: "/assets/portrait.jpeg",
-    portraitAlt: "/assets/portrait-alt.jpeg",
-    resume: "/assets/resume.pdf",
+    portrait: "./assets/portrait.jpeg",
+    portraitAlt: "./assets/portrait-alt.jpeg",
+    resume: "./assets/resume.pdf",
     favicon: "/favicon.svg",
     greeting: "Hello, I am"
   },
