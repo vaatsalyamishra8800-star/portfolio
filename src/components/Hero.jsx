@@ -144,12 +144,12 @@ export default function Hero({ onTriggerMotion }) {
 
         <div className="hero-actions-row">
           <a
-            href="#work"
+            href="#projects"
             className="primary-link"
             onMouseEnter={() => soundFx.playHover()}
             onClick={() => soundFx.playClick()}
           >
-            <span>Explore Work</span>
+            <span>Explore Projects</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

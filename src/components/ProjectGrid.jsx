@@ -90,8 +90,13 @@ function ProjectCard({ project, onSelect }) {
           )}
         </div>
 
-        <div className="project-cta-arrow" aria-hidden="true">
-          &rarr;
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '11px', color: 'var(--red)', fontWeight: 700, letterSpacing: '0.04em' }}>
+            Case Study
+          </span>
+          <div className="project-cta-arrow" aria-hidden="true">
+            &rarr;
+          </div>
         </div>
       </div>
     </article>
@@ -116,12 +121,15 @@ export default function ProjectGrid() {
   }, [selectedCategory, searchQuery]);
 
   return (
-    <section id="work" className="section-wrap" data-swarm>
+    <section id="projects" className="section-wrap" data-swarm>
+      {/* Anchor for legacy #work links */}
+      <span id="work" style={{ display: 'block', position: 'relative', top: '-100px', visibility: 'hidden' }} />
+
       <div className="section-heading">
         <span className="eyebrow">Portfolio & Systems</span>
-        <h2 className="display">Selected Work</h2>
+        <h2 className="display">Selected Projects</h2>
         <p>
-          High-performance architectures, local multi-agent LLM systems, and kinetic web graphics.
+          High-performance architectures, local multi-agent LLM systems, and kinetic web graphics. Click any project to inspect the full case study.
         </p>
       </div>
 
@@ -164,7 +172,18 @@ export default function ProjectGrid() {
       {/* Project Cards Grid */}
       {filteredProjects.length === 0 ? (
         <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--muted)' }}>
-          <p>No projects match your filter criteria.</p>
+          <p style={{ marginBottom: '16px' }}>No projects match your filter criteria.</p>
+          <button
+            type="button"
+            className="primary-link"
+            style={{ padding: '10px 22px', fontSize: '13px' }}
+            onClick={() => {
+              setSelectedCategory('All');
+              setSearchQuery('');
+            }}
+          >
+            Show All Projects
+          </button>
         </div>
       ) : (
         <div className="project-grid">
@@ -178,7 +197,7 @@ export default function ProjectGrid() {
         </div>
       )}
 
-      {/* Detail Dialog */}
+      {/* Detail Dialog rendered via Portal to body */}
       <ProjectDialog
         project={activeProject}
         onClose={() => setActiveProject(null)}

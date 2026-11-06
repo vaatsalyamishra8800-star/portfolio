@@ -7,7 +7,7 @@ export default function Header({ onTriggerMotion, isMotionActive, soundEnabled, 
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['work', 'about', 'experience', 'contact'];
+      const sections = ['projects', 'work', 'about', 'experience', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const id of sections) {
@@ -16,7 +16,7 @@ export default function Header({ onTriggerMotion, isMotionActive, soundEnabled, 
           const top = el.offsetTop;
           const height = el.offsetHeight;
           if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(id);
+            setActiveSection(id === 'work' ? 'projects' : id);
             return;
           }
         }
@@ -52,8 +52,8 @@ export default function Header({ onTriggerMotion, isMotionActive, soundEnabled, 
       <nav aria-label="Main Navigation">
         <ul className="desktop-nav">
           <li>
-            <a href="#work" className={activeSection === 'work' ? 'active' : ''}>
-              Work
+            <a href="#projects" className={activeSection === 'projects' || activeSection === 'work' ? 'active' : ''}>
+              Projects
             </a>
           </li>
           <li>
@@ -153,11 +153,11 @@ export default function Header({ onTriggerMotion, isMotionActive, soundEnabled, 
           }}
         >
           <a
-            href="#work"
+            href="#projects"
             onClick={() => setMobileMenuOpen(false)}
             style={{ fontSize: '18px', fontWeight: 700, color: 'var(--ink)' }}
           >
-            Work
+            Projects
           </a>
           <a
             href="#about"
