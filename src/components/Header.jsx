@@ -69,6 +69,11 @@ export default function Header({ onTriggerMotion, isMotionActive, soundEnabled, 
             </li>
           )}
           <li>
+            <a href="./assets/resume.pdf" target="_blank" rel="noopener noreferrer" title="View PDF Resume in new tab">
+              Resume <span style={{ fontSize: '11px', color: 'var(--red)', marginLeft: '2px' }}>↗</span>
+            </a>
+          </li>
+          <li>
             <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>
               Contact
             </a>
@@ -170,6 +175,16 @@ export default function Header({ onTriggerMotion, isMotionActive, soundEnabled, 
               Experience
             </a>
           )}
+          <a
+            href="./assets/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ fontSize: '18px', fontWeight: 700, color: 'var(--red)', display: 'flex', alignItems: 'center', gap: '6px' }}
+          >
+            <span>Resume (PDF)</span>
+            <span style={{ fontSize: '14px' }}>↗</span>
+          </a>
           <a
             href="#contact"
             onClick={() => setMobileMenuOpen(false)}
